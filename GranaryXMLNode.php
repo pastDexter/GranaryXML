@@ -8,5 +8,14 @@ abstract class GranaryXMLNode {
     $this->xml = $xml;
     $this->db = $db;
   }
+
+  protected function wrapElement($xmlElem)
+  {
+    if(is_a($xmlElem, 'SimpleXMLElement')) {
+      return new GranaryXMLElement($xmlElem, $this->db);
+    }
+    return $xmlElem;
+  }
+  
 }
  ?>

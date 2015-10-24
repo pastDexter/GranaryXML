@@ -13,7 +13,7 @@ class GranaryXMLSetTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testCount() {
-    $this->assertEquals(2, self::$set->count());
+    $this->assertEquals(3, self::$set->count());
   }
 
   public function testArrayAccess() {
@@ -26,7 +26,24 @@ class GranaryXMLSetTest extends PHPUnit_Framework_TestCase {
       $count++;
       $this->assertInstanceOf('GranaryXMLElement', $movie);
     }
-    $this->assertEquals(2, $count);
+    $this->assertEquals(3, $count);
+  }
+
+  public function testFind() {
+    $movie = self::$set->find(1);
+    $this->assertInstanceOf('GranaryXMLElement', $movie);
+    $this->assertEquals("Bar", $movie->name);
+  }
+
+  public function testFindNonElement() {
+    $this->assertNull(self::$set->find(99));
+  }
+
+  public function testWhere() {
+    $movies = self::$set->where("rating>=4");
+    $this->assertTrue(is_array($movies));
+    $this->assertEquals(2, count($movies));
+    $this->assertInstanceOf('GranaryXMLElement', $movies[0]);
   }
 
 }

@@ -21,6 +21,7 @@
       <name>Jey Query</name>
     </actor>
   </actors>
+
   <movies>
     <movie>
       <id>0</id>
@@ -30,14 +31,25 @@
         <actorId>0</actorId>
         <actorId>1</actorId>
       </actors>
+      <rating>4</rating>
     </movie>
     <movie>
       <id>1</id>
-      <name>Bar 2</name>
-      <categoryId>0</categoryId>
+      <name>Bar</name>
+      <categoryId>1</categoryId>
       <actors>
         <actorId>0</actorId>
       </actors>
+      <rating>5</rating>
+    </movie>
+    <movie>
+      <id>2</id>
+      <name>Bar 2</name>
+      <categoryId>1</categoryId>
+      <actors>
+        <actorId>0</actorId>
+      </actors>
+      <rating>2</rating>
     </movie>
   </movies>
 </db>
