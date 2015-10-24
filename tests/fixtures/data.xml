@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<db>
+  <categories>
+    <category>
+      <id>0</id>
+      <name>Romance</name>
+    </category>
+    <category>
+      <id>1</id>
+      <name>Horror</name>
+    </category>
+  </categories>
+
+  <actors>
+    <actor>
+      <id>0</id>
+      <name>John Doe</name>
+    </actor>
+    <actor>
+      <id>1</id>
+      <name>Jey Query</name>
+    </actor>
+  </actors>
+
+  <movies>
+    <movie>
+      <id>0</id>
+      <name>Foo</name>
+      <category_id>0</category_id>
+    </movie>
+    <movie>
+      <id>1</id>
+      <name>Bar 2</name>
+      <category_id>0</category_id>
+    </movie>
+  </movies>
+</db>
