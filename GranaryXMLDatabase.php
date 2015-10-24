@@ -1,12 +1,19 @@
 <?php
 
-class GranaryXMLDatabase extends GranaryXMLElement
+class GranaryXMLDatabase extends GranaryXMLNode
 {
-  
-  // public function tableExists($name) {
-  //   echo $this->xml->asXml();
-  //   return !is_null($this->xml->{$name});
-  // }
+
+  public function __get($name)
+  {
+    if ($this->tableExists($name)) {
+      return new GranaryXMLSet($this->xml->{$name}, $this);
+    }
+    return null;
+  }
+
+  public function tableExists($name) {
+    return isset($this->xml->{$name});
+  }
 
 }
 

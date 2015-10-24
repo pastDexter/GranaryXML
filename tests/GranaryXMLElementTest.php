@@ -2,19 +2,27 @@
 
 class GranaryXMLElementTest extends PHPUnit_Framework_TestCase {
 
-  protected static $db;
+  protected static $elem;
 
   public static function setUpBeforeClass() {
-      self::$db = GranaryXML::loadFromFile(__DIR__.'/fixtures/data.xml');
+    self::$elem = GranaryXML::loadFromFile(__DIR__.'/fixtures/data.xml')->movies[0];
   }
 
   public static function tearDownAfterClass() {
-      self::$db = NULL;
+    self::$elem = NULL;
   }
 
-  // public function testAccessAttributes() {
-  //   $this->assertEquals()
-  // }
+  public function testAccessAttribute() {
+    $this->assertEquals(self::$elem->name, "Foo");
+  }
+
+  public function testAccessNonAttribute() {
+    $this->assertNull(self::$elem->wrongAttr);
+  }
+
+  public function testAccessBelongsToRealtion() {
+    $this->assertEquals('Romance', self::$elem->category->name);
+  }
 
 }
 

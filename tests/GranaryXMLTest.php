@@ -4,7 +4,7 @@ class GranaryXMLTest extends PHPUnit_Framework_TestCase {
 
   public function testLoadFromFileInitializesDB() {
     $db = GranaryXML::loadFromFile(__DIR__.'/fixtures/data.xml');
-    $this->assertInstanceOf("GranaryXMLElement", $db);
+    $this->assertInstanceOf("GranaryXMLDatabase", $db);
   }
 
   public function testLoadFromFileNoFile() {

@@ -1,12 +1,12 @@
 <?php
 abstract class GranaryXMLNode {
 
-  protected $root;
+  protected $db;
   protected $xml;
 
-  function __construct($xml, $root = null) {
+  function __construct($xml, $db = null) {
     $this->xml = $xml;
-    $this->root = $root;
+    $this->db = $db;
   }
 }
  ?>

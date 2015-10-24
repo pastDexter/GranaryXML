@@ -21,17 +21,23 @@
       <name>Jey Query</name>
     </actor>
   </actors>
-
   <movies>
     <movie>
       <id>0</id>
       <name>Foo</name>
-      <category_id>0</category_id>
+      <categoryId>0</categoryId>
+      <actors>
+        <actorId>0</actorId>
+        <actorId>1</actorId>
+      </actors>
     </movie>
     <movie>
       <id>1</id>
       <name>Bar 2</name>
-      <category_id>0</category_id>
+      <categoryId>0</categoryId>
+      <actors>
+        <actorId>0</actorId>
+      </actors>
     </movie>
   </movies>
 </db>
